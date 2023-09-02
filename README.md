@@ -11,7 +11,6 @@ This project is a very minimal starter that includes 2 sample components, a glob
 (If you click this button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify)
 
 ## Table of Contents:
-
 - [Getting Started](#getting-started)
 - [Installation options](#installation-options)
 - [Testing](#testing)
@@ -20,13 +19,13 @@ This project is a very minimal starter that includes 2 sample components, a glob
   - [Removing Cypress](#removing-cypress)
 
 ## Getting Started
-
-First, run the development server:
-
+Install packages
 ```bash
-npm run dev
-# or
-yarn dev
+yarn
+```
+Then, run the development server:
+```bash
+yarn run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
