@@ -6,9 +6,7 @@ import OwnersList from "./owners-list";
 interface HomepageContainerProps {
   owners: Owner[];
 }
-const HomepageContainer: React.FC<HomepageContainerProps> = ({
-  owners,
-}) => {
+const HomepageContainer: React.FC<HomepageContainerProps> = ({ owners }) => {
   return (
     <Flex direction={"column"} w={"100%"}>
       <Header />

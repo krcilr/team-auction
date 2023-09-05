@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { Owner } from "../types/owner";
 
 export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL as string,
@@ -24,5 +25,5 @@ export const getOwnersTeams = async () => {
     throw error;
   }
 
-  return { data, error };
+  return { data: data as Owner[], error };
 };

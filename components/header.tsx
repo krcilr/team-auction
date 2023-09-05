@@ -1,10 +1,9 @@
 import {
   Flex,
   Heading,
+  IconButton,
   Image,
   useColorMode,
-  IconButton,
-  Link,
 } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
@@ -20,17 +19,13 @@ const Header = () => {
       align={"center"}
       mx={"auto"}
     >
-      <Link href={"/"} style={{ cursor: "pointer" }}>
-        <a>
-          <Image
-            src={"/TeamAuctionLogo.png"}
-            alt={"Team Auction Logo"}
-            w={["75px", "200px"]}
-            h={"100%"}
-            flexBasis={"25%"}
-          />
-        </a>
-      </Link>
+      <Image
+        src={"/TeamAuctionLogo.png"}
+        alt={"Team Auction Logo"}
+        w={["75px", "200px"]}
+        h={"100%"}
+        flexBasis={"25%"}
+      />
       <Heading
         as={"h1"}
         fontSize={["20px", "60px"]}
@@ -49,33 +44,6 @@ const Header = () => {
         onClick={toggleColorMode}
       />
     </Flex>
-
-    // <Flex
-    //   direction={"row"}
-    //   align="center"
-    //   justify="space-between"
-    //   width="100%"
-    // >
-    //   <Heading
-    //     as={"h1"}
-    //     fontSize={["20px", "60px"]}
-    //     mb={8}
-    //     fontFamily={"Inter"}
-    //     color={"#2D3748"}
-    //     dropShadow={"2xl"}
-    //     flexBasis={"75%"}
-    //   >
-    //     Team Auction
-    //   </Heading>
-    //   <Image
-    //     src={"/TeamAuctionLogo.png"}
-    //     alt={"Team Auction Logo"}
-    //     w={["75px", "200px"]}
-    //     h={"100%"}
-    //     flexBasis={"25%"}
-    //   />
-
-    // </Flex>
   );
 };
 
