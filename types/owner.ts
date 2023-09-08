@@ -6,5 +6,8 @@ export interface Owner {
   team_image_url: string;
   team_name: string;
   location: string;
-  price: number;
+  team_wins: number;
+  team_price: number;
+  total: number;
+  owner_wins: number;
 }

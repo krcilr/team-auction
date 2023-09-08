@@ -6,7 +6,6 @@ interface TeamContainerProps {
 }
 
 const TeamContainer: React.FC<TeamContainerProps> = ({ team }) => {
-  console.log("team", team);
   return (
     <Box mt={3}>
       <Flex align="center">
@@ -17,7 +16,7 @@ const TeamContainer: React.FC<TeamContainerProps> = ({ team }) => {
           h={["50px", "100px"]}
         />
         <Text fontSize={"24px"} fontWeight={"bold"} fontFamily={"Inter"} ml={3}>
-          {`$${team.price}`}
+          {`$${team.team_price}`}
         </Text>
       </Flex>
     </Box>
