@@ -27,3 +27,17 @@ export const getOwnersTeams = async () => {
 
   return { data: data as Owner[], error };
 };
+
+export const updateOwnerTeams = async (teamName: string, wins: number ) => {
+  const { error: updateError } = await supabase
+    .from('owner_teams')
+    .update({ team_wins: wins })
+    .eq('team_name', teamName);
+
+  if (updateError) {
+    console.error('Failed to update owner_teams', updateError);
+    throw updateError;
+  }
+
+  return { successful: true };
+};

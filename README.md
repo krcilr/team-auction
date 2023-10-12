@@ -87,3 +87,11 @@ And lastly if you’d like to remove Cypress entirely, delete the entire `cypres
 ```bash
 npm uninstall -S cypress
 ```
+
+## Ryans actual deployment notes
+- I had to add a netlify.toml file to the root of the project to get the build to work
+
+### To run the edge functions
+1. `netlify dev` will run the functions locally
+1. Navigate to `http://localhost:8888/.netlify/functions/update-teams` to see the edge function
+- `netlify functions:invoke edge` will run the edge function locally
