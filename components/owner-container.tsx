@@ -1,18 +1,23 @@
+import { useState } from "react";
 import {
   Avatar,
   Box,
   Flex,
+  IconButton,
   List,
   ListItem,
   Text,
 } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
 import { Owner } from "../types/owner";
 
 interface OwnerContainerProps {
   ownerData: Owner[];
+  isFavorite: boolean;
+  setFavoriteOwner: (ownerId: number) => void;
 }
 
-const OwnerContainer: React.FC<OwnerContainerProps> = ({ ownerData }) => {
+const OwnerContainer: React.FC<OwnerContainerProps> = ({ ownerData, isFavorite, setFavoriteOwner }) => {
   if (!ownerData) {
     return <Text>Loading...</Text>;
   }
@@ -38,6 +43,13 @@ const OwnerContainer: React.FC<OwnerContainerProps> = ({ ownerData }) => {
         >
           {owner.owner_name}
         </Text>
+        <IconButton
+          aria-label="Favorite"
+          icon={isFavorite ? <StarIcon boxSize="24px" color="yellow.400" /> : <StarIcon boxSize="24px" color="gray.300" />}
+          variant="unstyled"
+          onClick={() => setFavoriteOwner(owner.owner_id)}
+          ml={3}
+        />
         <Box px={2} ml="auto">
           <Text fontSize={"18px"} fontWeight={"semibold"} fontFamily={"Inter"}>
             Total: ${owner.total}
@@ -83,11 +95,7 @@ const OwnerContainer: React.FC<OwnerContainerProps> = ({ ownerData }) => {
                 size={["md", "lg"]}
               />
             </Flex>
-            <Text
-              fontSize="18px"
-              fontWeight="semibold"
-              fontFamily="Inter"
-            >
+            <Text fontSize="18px" fontWeight="semibold" fontFamily="Inter">
               ${team.team_price}
             </Text>
           </ListItem>
