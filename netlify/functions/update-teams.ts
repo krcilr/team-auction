@@ -25,6 +25,6 @@ const myHandler: Handler = async (
   }
 };
 
-const handler = schedule("0 0 * * 2", myHandler);
+const handler = schedule("0 0 * * *", myHandler);
 
 export { handler };
