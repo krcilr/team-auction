@@ -36,6 +36,7 @@ export const fetchNflTeamWins = async () => {
 
     return { successful: true };
   } catch (error: any) {
+    console.error("---==FAILED TO FETCH NFL WINS==---");
     console.error(error);
     throw new Error(error.message);
   }
