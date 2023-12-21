@@ -15,16 +15,19 @@ const Header = () => {
       maxW={"1280px"}
       py={8}
       px={4}
-      justifyContent={"space-between"}
+      justifyContent={"center"}
       align={"center"}
       mx={"auto"}
+      position={"relative"}
     >
       <Image
-        src={"/TeamAuctionLogo.png"}
+        src={"/LogoTransparentBG.png"}
         alt={"Team Auction Logo"}
         w={["75px", "200px"]}
         h={"100%"}
-        flexBasis={"25%"}
+        position={"absolute"}
+        left={0}
+        mr={8}
       />
       <Heading
         as={"h1"}
@@ -32,7 +35,6 @@ const Header = () => {
         mb={8}
         fontFamily={"Inter"}
         dropShadow={"2xl"}
-        flexBasis={"75%"}
         _light={{ color: "#2D3748" }}
         _dark={{ color: "#A0AEC0" }}
       >
@@ -42,6 +44,8 @@ const Header = () => {
         aria-label="Toggle dark mode"
         icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
         onClick={toggleColorMode}
+        position={"absolute"}
+        right={0}
       />
     </Flex>
   );
